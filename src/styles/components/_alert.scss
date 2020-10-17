@@ -1,0 +1,83 @@
+.alert {
+    width: fit-content;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.03), 0 -1px 18px rgba(0, 0, 0, 0.06);
+    letter-spacing: 0.08rem;
+    color: grey;
+    position: fixed;
+    top: 3%;
+    right: 1%;
+    transform: translate(-0%, 0%);
+    z-index: 9999;
+    min-width: 350px;
+    max-width: 350px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: $white;
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+    -o-animation: fadeIn ease 2s;
+    -ms-animation: fadeIn ease 2s;
+}
+
+.error-alert {
+    border-left: 5px solid $danger;
+}
+
+.success-alert {
+    border-left: 5px solid green;
+}
+
+.fa-times:hover {
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,15 +1,18 @@
 import React from "react";
-import "./App.scss";
 import { Route } from "routes";
+import { Switch } from "react-router-dom";
 import { Login, Register } from "pages";
-import Switch from "react-bootstrap/esm/Switch";
+import { ApolloProvider } from "config";
+import "./App.scss";
 
 function App() {
   return (
-    <Switch>
-      <Route path="/register" component={Register} guest />
-      <Route path="/login" component={Login} guest />
-    </Switch>
+    <ApolloProvider>
+      <Switch>
+        <Route path="/register" component={Register} guest />
+        <Route path="/login" component={Login} guest />
+      </Switch>
+    </ApolloProvider>
   );
 }
 

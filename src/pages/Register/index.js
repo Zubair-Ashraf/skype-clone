@@ -1,11 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Form, Row, Col, Button, Image } from "react-bootstrap";
+import { useMutation } from "@apollo/client";
 import { FormControl, Formik } from "components";
+import { REGISTER_USER } from "gql";
+import ErrorBoundary from "hoc";
 import { FormSchema } from "utils";
 import SKYPE_LOGO from "assets/skype-logo.png";
 
-function Register() {
+function Register({ setError, ...props }) {
+  const [registerUser, { loading, error }] = useMutation(REGISTER_USER, {
+    update: (_, data) => props.history.push("/login"),
+    onError: (error) => {
+      setError({ message: error.graphQLErrors[0].message });
+    },
+  });
+
   return (
     <Container fluid className="vh-100">
       <Row className="vh-100 justify-content-center align-items-center text-center">
@@ -13,6 +23,7 @@ function Register() {
           <Formik
             initialValues={{}}
             validationSchema={FormSchema.RegisterFormSchema}
+            onSubmit={(values) => registerUser({ variables: values })}
           >
             <Image src={SKYPE_LOGO} width={120} />
             <h1 className="font-weight-light mt-4 mb-5">Sign up</h1>
@@ -44,4 +55,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default ErrorBoundary(Register);
