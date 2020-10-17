@@ -5,13 +5,16 @@ import { useMutation } from "@apollo/client";
 import { FormControl, Formik } from "components";
 import { LOGIN_USER } from "gql";
 import ErrorBoundary from "hoc";
+import { useAuthDispatch } from "context";
 import { FormSchema } from "utils";
 import SKYPE_LOGO from "assets/skype-logo.png";
 
 function Login({ setError }) {
+  const dispatch = useAuthDispatch();
   const [loginUser, { loading, error }] = useMutation(LOGIN_USER, {
-    update: (_, data) => {
-      console.log(data, "Login");
+    onCompleted: (data) => {
+      dispatch({ type: "LOGIN", payload: data.login });
+      window.location.href = "/";
     },
     onError: (error) => {
       setError({ message: error.graphQLErrors[0].message });

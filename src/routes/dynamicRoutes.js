@@ -1,10 +1,13 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
+import { useAuthState } from "context";
 
 function DynamicRoutes({ component, authenticated, guest, ...props }) {
-  if (authenticated && false) {
+  const { user } = useAuthState();
+
+  if (authenticated && !user) {
     return <Redirect to="/login" />;
-  } else if (guest && false) {
+  } else if (guest && user) {
     return <Redirect to="/" />;
   } else {
     return <Route component={component} {...props} />;

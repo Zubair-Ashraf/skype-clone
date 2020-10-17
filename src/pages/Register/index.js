@@ -10,7 +10,9 @@ import SKYPE_LOGO from "assets/skype-logo.png";
 
 function Register({ setError, ...props }) {
   const [registerUser, { loading, error }] = useMutation(REGISTER_USER, {
-    update: (_, data) => props.history.push("/login"),
+    onCompleted: () => {
+      props.history.push("/login");
+    },
     onError: (error) => {
       setError({ message: error.graphQLErrors[0].message });
     },
