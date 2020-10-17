@@ -8,3 +8,19 @@ input:focus{
     outline: none;
     box-shadow: none;
 }
+
+.searchbar{
+    background-color: black;
+    border: none !important;
+    height: 31px !important;
+}
+
+.searchbar::placeholder{
+    font-size: 14px;
+}
+
+.input-group{
+    background-color:black !important;
+    border-radius: 4px !important;
+    border: 1px solid rgb(65, 65, 65) !important;
+}

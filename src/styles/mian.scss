@@ -2,7 +2,10 @@
 @import './helpers/variables';
 @import './helpers/theme';
 @import './helpers/bgColors';
+@import './helpers/sizing';
+@import './helpers/common';
 
 //components
 @import './components/input';
 @import './components/alert';
+@import './components/avatar';
