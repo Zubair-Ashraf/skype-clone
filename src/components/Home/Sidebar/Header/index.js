@@ -13,7 +13,7 @@ import {
 
 function Header() {
   return (
-    <header>
+    <header className="px-2">
       <div className="d-flex align-items-center text-light py-3">
         <div className="avatar" />
         <span className="ml-2 font-sm">Zubair Ashraf</span>
