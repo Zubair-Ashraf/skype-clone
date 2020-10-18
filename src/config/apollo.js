@@ -11,7 +11,7 @@ import { WebSocketLink } from "@apollo/client/link/ws";
 import { getMainDefinition } from "@apollo/client/utilities";
 
 let httpLink = createHttpLink({
-  uri: process.env.REACT_APP_API_HTTP_URL,
+  uri: "https://skype-server.herokuapp.com",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -29,7 +29,7 @@ const authLink = setContext((_, { headers }) => {
 httpLink = authLink.concat(httpLink);
 
 const wsLink = new WebSocketLink({
-  uri: REACT_APP_API_HTTP_URL,
+  uri: "ws://skype-server.herokuapp.com",
   options: {
     reconnect: true,
     connectionParams: {
