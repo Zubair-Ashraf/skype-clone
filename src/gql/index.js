@@ -1,1 +1,8 @@
-export { LOGIN_USER, REGISTER_USER } from "./Queries";
+export {
+  LOGIN_USER,
+  REGISTER_USER,
+  GET_USERS,
+  GET_MESSAGES,
+  SEND_MESSAGE,
+  NEW_MESSAGE,
+} from "./Queries";

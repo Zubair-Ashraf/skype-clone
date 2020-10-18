@@ -1,0 +1,27 @@
+.message-list-item.active{
+    background-color: #2b333b;
+}
+
+.message-list-item:hover{
+    // background-color: #2b333b57;
+    cursor: pointer;
+}
+
+.message-list {
+    height: 62vh;
+    overflow-y: scroll;
+}
+
+// .message-list:hover::-webkit-scrollbar{
+//     display: block;
+// }
+
+.message-list::-webkit-scrollbar{
+    width: 8px;
+    display: none;
+}
+
+.message-list::-webkit-scrollbar-thumb{
+background-color: rgba(255,255,255,0.2);
+border-radius: 50px !important;
+}

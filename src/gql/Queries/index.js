@@ -25,3 +25,61 @@ export const REGISTER_USER = gql`
     }
   }
 `;
+
+export const GET_USERS = gql`
+  query users {
+    users {
+      id
+      username
+      email
+      imageUrl
+      latestMessage {
+        id
+        content
+        from
+        to
+        createdAt
+        updatedAt
+      }
+    }
+  }
+`;
+
+export const GET_MESSAGES = gql`
+  query receiveMessages($from: String!) {
+    receiveMessages(data: { from: $from }) {
+      id
+      content
+      from
+      to
+      createdAt
+      updatedAt
+    }
+  }
+`;
+
+export const SEND_MESSAGE = gql`
+  mutation sendMessage($to: String!, $content: String!) {
+    sendMessage(data: { to: $to, content: $content }) {
+      id
+      content
+      from
+      to
+      createdAt
+      updatedAt
+    }
+  }
+`;
+
+export const NEW_MESSAGE = gql`
+  subscription receiveMessage {
+    receiveMessage {
+      id
+      content
+      from
+      to
+      createdAt
+      updatedAt
+    }
+  }
+`;

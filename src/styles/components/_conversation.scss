@@ -1,0 +1,38 @@
+.conversation{
+    height: 66vh;
+    overflow-y: scroll;
+}
+
+// .conversation:hover::-webkit-scrollbar{
+//     display: block;
+// }
+
+.conversation::-webkit-scrollbar{
+    width: 8px;
+    display: none;
+}
+
+.conversation::-webkit-scrollbar-thumb{
+background-color: rgba(255,255,255,0.2);
+border-radius: 50px !important;
+}
+
+.message-chip{
+    width: max-content;
+    max-width: 500px;
+    flex-wrap: wrap;
+}
+
+.message-chip.send{
+    background-color: #2b333b; 
+    border-radius: 10px 10px 0% 10px;
+}
+
+.message-chip.receive{
+    background-color: #1e2224;
+    border-radius: 0% 10px 10px 10px;
+}
+
+.say_hy{
+    transform: rotate(15deg);
+}

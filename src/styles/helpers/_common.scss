@@ -1,11 +1,53 @@
 .border-left-gray{
-    border-left:  1px solid rgb(65, 65, 65) !important;
+    border-left:  1px solid  rgb(49, 49, 49) !important;
 }
+
+.border-right-gray{
+    border-right:  1px solid rgb(47, 47, 47) !important;
+}
+
 
 .text-gray{
     color: rgb(167, 166, 166) !important;
 }
 
 .bg-light-gray{
-    background-color: rgb(65, 65, 65) !important;
+    background-color:  rgb(49, 49, 49) !important;
+}
+
+.bg-gray{
+    background-color:  rgb(68, 68, 68) !important;
+}
+
+.bottom-10{
+    bottom: 10px !important;
+}
+
+body::-webkit-scrollbar{
+    display: none
+}
+
+.dropdown-toggle{
+    background-color: transparent !important;
+    border: none !important
+}
+
+.dropdown-toggle:focus{
+    box-shadow: none !important
+}
+
+.dropdown-toggle:after{
+    display: none !important
+}
+
+.dropdown-menu{
+    width: 250px !important
+}
+
+.dropdown-item:hover{
+    background-color: $dark !important;
+}
+
+.dropdown-divider{
+    border-top-color: rgb(49, 49, 49) !important
 }

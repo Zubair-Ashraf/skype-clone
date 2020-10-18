@@ -9,10 +9,12 @@ input:focus{
     box-shadow: none;
 }
 
-.searchbar{
+.searchbar, .searchbar:focus{
     background-color: black;
     border: none !important;
     height: 31px !important;
+    box-shadow: none !important;
+    color: $white;
 }
 
 .searchbar::placeholder{
@@ -22,5 +24,20 @@ input:focus{
 .input-group{
     background-color:black !important;
     border-radius: 4px !important;
-    border: 1px solid rgb(65, 65, 65) !important;
+    border: 1px solid rgb(49, 49, 49) !important;
+}
+
+.message-box>input{
+    background-color: #2b333b !important;
+    height: 50px !important;
+}
+
+.message-box>input:focus{
+    box-shadow: none !important;
+}
+
+.message-box>button{
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 100% !important;
 }
